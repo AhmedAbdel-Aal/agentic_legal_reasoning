@@ -2,10 +2,7 @@
 import os
 from groq import Groq
 from openai import OpenAI
-from dotenv import load_dotenv
 from message import Message
-
-load_dotenv()
 
 
 class SeniorAgent:

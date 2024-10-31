@@ -1,10 +1,7 @@
 import os
 from groq import Groq
 import openai
-from dotenv import load_dotenv
 from message import Message
-
-load_dotenv()
 
 
 class JuniorAgent:
