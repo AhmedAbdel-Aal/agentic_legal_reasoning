@@ -1,5 +1,4 @@
 import os
-import ollama
 from groq import Groq
 import openai
 from dotenv import load_dotenv
@@ -31,16 +30,7 @@ class JuniorAgent:
 
     def get_completion(self, prompt, system_message="You are a helpful assistant."):
 
-        if self.backend == "ollama":
-            response = ollama.chat(
-                model=self.model_name,#"llama3:8b",
-                messages=[
-                    {"role": "system", "content": system_message},
-                    {"role": "user", "content": prompt},
-                ],
-            )
-            return response["message"]["content"]
-        elif self.backend == "groq":
+        if self.backend == "groq":
             chat_completion = self.groq_client.chat.completions.create(
                 model=self.model_name,#"llama3-70b-8192",
                 temperature=0,
