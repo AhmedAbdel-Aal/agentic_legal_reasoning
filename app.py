@@ -83,6 +83,21 @@ senior_base_prompt = st.text_area("Senior Lawyer Base Prompt")
 senior_system_prompt = st.text_area("Senior Lawyer System Prompt", "You are expert legal lawyer with European Court of Human Rights (ECHR).")
 scenario_choice = st.radio("Choose Scenario", ["scenario_one", "scenario_two"])
 backend_model = st.radio("Choose Model", ["openai,gpt-4o", "groq,llama-3.1-70b-versatile"])
+
+
+if "{facts}" in junior_base_prompt:
+    junior_base_prompt = junior_base_prompt.replace("{facts}", facts)
+
+if "{facts}" in senior_base_prompt:
+    senior_base_prompt = senior_base_prompt.replace("{facts}", facts)
+
+if "{conclusion}" in junior_base_prompt:
+    junior_base_prompt = junior_base_prompt.replace("{conclusion}", conclusion)
+
+if "{conclusion}" in senior_base_prompt:
+    senior_base_prompt = senior_base_prompt.replace("{conclusion}", conclusion)
+
+
 # CSS styling for message boxes
 st.markdown(
     """
