@@ -21,6 +21,7 @@ junior_base_prompt = f"""
     To do so, you have acess to an senior legal expert that can help you answer the questions about law,legal norms, argumentations, and any other legal relation question.
     The senior legal expert do not have access to the case text, and can only answer your questions to help you answer the questions.
     for example, you can ask about articles, when could they be violated, why they are violated, etc.
+    Don't ask questions that require the senior legal expert to have access to the case text.
     Collect the information you need to do the task, and then provide the reasoning behind the court decision.
 
     please ask one question at a time and wait for the answer before asking the next question.
@@ -29,4 +30,14 @@ junior_base_prompt = f"""
     Final Answer: to provide the reasoning behind the court decision
 
     Your last message should be the Final Answer.
+
+    The facts, conclusion, and the question are given by XML tags <FACTS></FACTS>, <CONCLUSION></CONCLUSION>, <QUESTION></QUESTION> as follows:
+
+    <FACTS>
+    {facts}
+    </FACTS>
+
+    <CONCLUSION>
+    {conclusion}
+    </CONCLUSION>
 """

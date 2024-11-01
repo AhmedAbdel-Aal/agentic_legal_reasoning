@@ -30,6 +30,16 @@ junior_base_prompt = f"""
     
     read the facts and conclusion carefully and wait for questions from the senior lawyer to answer them.
     reply with 'Ready for the next question' when you are ready for the next question.
+
+    The facts, conclusion, and the question are given by XML tags <FACTS></FACTS>, <CONCLUSION></CONCLUSION>, <QUESTION></QUESTION> as follows:
+
+    <FACTS>
+    {facts}
+    </FACTS>
+
+    <CONCLUSION>
+    {conclusion}
+    </CONCLUSION>
 """
 
 

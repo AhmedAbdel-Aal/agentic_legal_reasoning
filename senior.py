@@ -1,7 +1,7 @@
 
 import os
 from groq import Groq
-from openai import OpenAI
+import openai
 from message import Message
 
 
@@ -17,7 +17,8 @@ class SeniorAgent:
         if backend == "groq":
             self.groq_client = Groq(api_key=os.getenv("GROQ_API_TOKEN"))
         elif backend == "openai":
-            self.openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+            openai.api_key = os.environ["OPENAI_API_KEY"]
+            self.openai_client = openai.OpenAI()
 
     def __str__(self) -> str:
         s = f"SummaryAgent(model_name={self.model_name})"

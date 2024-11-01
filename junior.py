@@ -16,7 +16,7 @@ class JuniorAgent:
         if backend == "groq":
             self.groq_client = Groq(api_key=os.getenv("GROQ_API_TOKEN"))
         elif backend == "openai":
-            openai.api_key = os.environ["OPEN_AI"]
+            openai.api_key = os.environ["OPENAI_API_KEY"]
             self.openai_client = openai.OpenAI()
 
     def __str__(self) -> str:
